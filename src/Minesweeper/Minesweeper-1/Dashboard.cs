@@ -1,31 +1,38 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace Mini
+﻿namespace Minesweeper
 {
-    class Табло
+
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+
+    public class Dashboard
     {
-        private List<Човек> participants;
-        public Табло()
+        private List<Person> participants;
+
+        public Dashboard()
         {
-            participants = new List<Човек>();
+            participants = new List<Person>();
         }
+
         internal int MinInTop5()
         {
             if (participants.Count > 0)
+            {
                 return participants.Last().Score;
+            }
+
             return -1;
         }
-        internal void Dobavi(int score)
+
+        internal void EnterPlayerName(int score)
         {
             Console.Write("Please enter your name for the top scoreboard: ");
             string name = Console.ReadLine();
-            participants.Add(new Човек(name, score));
-            participants.Sort(new Comparison<Човек>(  (p1, p2) => p2.Score.CompareTo(p1.Score)));
+            participants.Add(new Person(name, score));
+            participants.Sort(new Comparison<Person>((p1, p2) => p2.Score.CompareTo(p1.Score)));
             participants = participants.Take(5).ToList();
         }
+
         internal void Покажи()
         {
             Console.WriteLine("Scoreboard:");
@@ -35,6 +42,7 @@ namespace Mini
             }
             Console.WriteLine();
         }
+
         internal int Count()
         {
             return participants.Count();

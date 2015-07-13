@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Mini
+namespace Minesweeper
 {
 
-    class Дъска
+    class Panel
     {
         private const int SizeX = 5;
         private const int SizeY = 10;
@@ -18,7 +18,7 @@ namespace Mini
         private int[,] numberOfNeighbourMines;
         internal int RevealedCells { get; set; }
     
-        public Дъска()
+        public Panel()
         {
             display = new char[SizeX, SizeY];
             hasMine = new bool[SizeX, SizeY];

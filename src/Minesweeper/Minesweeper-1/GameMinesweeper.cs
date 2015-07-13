@@ -5,20 +5,20 @@ using System.Text;
 using System.Diagnostics;
 using System.Windows.Forms;
 
-namespace Mini
+namespace Minesweeper
 {
 
 	// Аз съм българче и пиша на БЪЛГАРСКИ!
 
-    class Програма
+    class GameMinesweeper
     {
         static void Main()
         {
 
-            Табло scoreboard = new Табло();
+            Dashboard scoreboard = new Dashboard();
             ДайНаново:
             bool displayBoard = true;
-            Дъска board = new Дъска();
+            Panel board = new Panel();
             Console.WriteLine("Welcome to the game “Minesweeper”. Try to reveal all cells without mines. Use 'top' to view the scoreboard, 'restart' to start a new game and 'exit' to quit the game.");
             Console.WriteLine();
 
@@ -28,30 +28,30 @@ namespace Mini
                     board.Display();
                 displayBoard = true;
                 Console.Write("Enter row and column: ");
-                Команда.Прочети();
+                Commands.Прочети();
 
-                if (!Команда.NeMojesh)
+                if (!Commands.NeMojesh)
                 {
-                    if (Команда.IsGetStatistic)
+                    if (Commands.IsGetStatistic)
                     {
                         scoreboard.Покажи();
                         displayBoard = false;
-                        Команда.Clear();
+                        Commands.Clear();
                         continue;
                     }
-                    if (Команда.Izlez)
+                    if (Commands.Izlez)
                     {
                         Console.WriteLine("Goodbye!");
                         Environment.Exit(0);
                     }
-                    if (Команда.Nanovo)
+                    if (Commands.Nanovo)
                     {//ako iskahs pak skakash neznaino kyde
                         // ama pyk si bachka
                         goto ДайНаново;
                     }
 
-                    int x = Команда.x;
-                    int y = Команда.y;
+                    int x = Commands.x;
+                    int y = Commands.y;
                     if (!board.proverka(x, y) || board.proverka2(x, y))
                     {
                         Console.WriteLine("Illegal move!");
@@ -68,7 +68,7 @@ namespace Mini
                             Console.WriteLine();
                             if (board.RevealedCells > scoreboard.MinInTop5() || scoreboard.Count() < 5)
                             {
-                                scoreboard.Dobavi(board.RevealedCells);
+                                scoreboard.EnterPlayerName(board.RevealedCells);
                             }
                             scoreboard.Покажи();
                             goto ДайНаново;

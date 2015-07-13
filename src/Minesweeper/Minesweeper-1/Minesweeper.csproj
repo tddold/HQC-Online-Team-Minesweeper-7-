@@ -8,7 +8,7 @@
     <ProjectGuid>{E1502FC2-A30F-4A16-A67C-D75F7A1E7602}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Mini</RootNamespace>
+    <RootNamespace>Minesweeper</RootNamespace>
     <AssemblyName>Minesweeper</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
@@ -44,11 +44,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Дъска.cs" />
-    <Compile Include="Команда.cs" />
-    <Compile Include="Човек.cs" />
-    <Compile Include="Програма.cs" />
-    <Compile Include="Табло.cs" />
+    <Compile Include="Panel.cs" />
+    <Compile Include="Commands.cs" />
+    <Compile Include="Person.cs" />
+    <Compile Include="GameMinesweeper.cs" />
+    <Compile Include="Dashboard.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />

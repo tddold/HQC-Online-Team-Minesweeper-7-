@@ -2,13 +2,30 @@
 ------------------------------------------------------
 
 1.  Redesigned the project structure: Team “Minesweeper”
-	-   Renamed the project to `Minesweeper`.
-	-   Renamed the main class `Program` to `GameFifteen`.
-	-   Extracted each class in a separate file with a good name: `GameFifteen.cs`, `Board.cs`, `Point.cs`.
+	-   Renamed the project to `Minesweeper`.	-   
+	-   Renamed the namespace `Mini` to `Minesweeper`.
+	-   Renamed the main class `Program` to `GameMinesweeper`.
+	-   Renamed the class `Табло` to `Dashboard`.
+	-   Renamed the class `Дъска` to `Panel`.
+	Commands-   Renamed the class `Команда` to `Commands`.
+	-   renamed the class `Човек` to `Person`.
+	-   Extracted each class in a separate file with a good name: `GameMinesweeper.cs`, `Dashboard.cs`, `Panel.cs`, `Commands.cs`, `Person.cs`.
 	-   …
 2.  Reformatted the source code:
-	-   Removed all unneeded empty lines, e.g. in the method `PlayGame()`.
-	-   Inserted empty lines between the methods.
+	-   Reformatted class `Person.cs`.
+	-   Insert class access modifier.
+	-   Insert fields `name` , `score`.
+	-   Move constructor before properties.
+	-   Inserted empty lines between the properties.
+
+    -   Reformatted class `Dashboard.cs`.
+    -   Move using derectives in namespase.
+    -   Put **{** and **}** after all conditionals and if statemants
+    -   Renamed method `Dobavi` to `EnterPlayerName`.
+	-   Move constructor before properties.
+	-   Inserted empty lines between the all methods.
+
+
 	-   Split the lines containing several statements into several simple lines, e.g.:
 	
 	Before:
