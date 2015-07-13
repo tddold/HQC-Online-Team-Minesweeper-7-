@@ -1,8 +1,8 @@
  Refactoring Documentation for Project “Minesweeper”                                                                                                                          
 ------------------------------------------------------
 
-1.  Redesigned the project structure: Team “…”
-	-   Renamed the project to `Game-15`.
+1.  Redesigned the project structure: Team “Minesweeper”
+	-   Renamed the project to `Minesweeper`.
 	-   Renamed the main class `Program` to `GameFifteen`.
 	-   Extracted each class in a separate file with a good name: `GameFifteen.cs`, `Board.cs`, `Point.cs`.
 	-   …
